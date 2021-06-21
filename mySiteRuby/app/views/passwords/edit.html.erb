@@ -1,0 +1,35 @@
+<% if @user.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="mt-3">
+  <div class="row justify-content-center">
+    <section class="col-lg-5">
+      <div class="">
+        <div class="col-xs-12">
+          <h3>Modifier mon mot de passe</h3>
+          <%= form_for @user, url: password_path(@user.id) do |form| %>
+
+            <%= form.hidden_field :recover_password %>
+
+            <div class="input-group mb-2">
+              <%= form.password_field :password, placeholder: "Mot de passe" , :class => "form-control"%> 
+            </div>
+            <div class="input-group mb-2">
+              <%= form.password_field :password_confirmation, placeholder: "Confirmer le mot de passe" , :class => "form-control"%> 
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Modifier</button>
+            </div>
+          <% end %>
+        </div>
+      </div>          
+    </section>
+  </div>
+</div>

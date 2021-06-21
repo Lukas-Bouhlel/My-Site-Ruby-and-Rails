@@ -1,0 +1,12 @@
+<div class="container">   
+    <h1 class="text-center">Articles de chats</h1>
+    <div class="d-block">
+        <% @articles.each do |articles| %>
+            <div class="container">
+                <div><%= articles.image %></div>
+                <div><%= articles.name %></div>
+                <div><%= articles.bio %></div>
+            </div>
+        <% end %>
+    </div>
+</div>

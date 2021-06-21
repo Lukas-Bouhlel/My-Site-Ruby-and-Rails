@@ -1,0 +1,29 @@
+<div class="container mt-3">
+    <h1>Gérer les utilisateurs</h1>
+
+    <p class="text-right">
+        <%= link_to 'Ajouter un utilisateur', {action: :new}, class: 'btn btn-primary'%>
+    </p>
+
+    <table class="table table-striped border">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @users.each do |users| %>
+                <tr>
+                    <td><%= users.id %></td>
+                    <td><%= users.name %></td>
+                    <td>
+                        <%= link_to 'Editer', [:edit, :admin, users], class: 'btn btn-primary' %>
+                        <%= link_to 'Supprimer', [:admin, users], class: 'btn btn-danger', data:{method: :delete, confirm: 'Voulez vous vraiment supprimer cet utilisateurs ?'} %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

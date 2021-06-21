@@ -1,0 +1,8 @@
+Bonjour, <%= @user.name %>
+
+Merci pour votre inscription
+Vous pouvez valider votre compte en vous rendant sur le lien
+
+<%= confirm_user_url(id: @user.id, token: @user.confirmation_token) %>
+
+Merci

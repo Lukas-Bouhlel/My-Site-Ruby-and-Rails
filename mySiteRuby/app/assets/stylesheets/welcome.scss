@@ -1,0 +1,57 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.img-width {
+    width: 40%;
+}
+.img-width img {
+    width: 150%;
+}
+.img-width2 {
+    width: 50%;
+    text-align: center;
+}
+.text-welcome {
+    margin-top: 15%;
+    width: 60%;
+}
+.text-welcome2 {
+    width: 50%;
+    margin-top: 15%;
+}
+.container-welcome {
+    display: flex;
+}
+.container2-welcome {
+    background-color: gray;
+    display: flex;
+}
+.footer-welcome {
+    background-color: #f8f9fa;
+}
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+@media (max-width:1280px) {
+    .container-welcome {
+        display: block;
+    }
+    .container2-welcome {
+        display: block;
+    }
+    .img-width {
+        display: none;
+    }
+    .img-width2 {
+        width: auto;
+    }
+    .text-welcome {
+        margin-top: 10%;
+        width: auto;
+    }
+    .text-welcome2 {
+        padding-top: 5%;
+        width: auto;
+        margin-top: 10%;
+    }
+}

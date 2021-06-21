@@ -1,0 +1,34 @@
+<div class="mt-3">
+  <div class="row justify-content-center">
+    <section class="col-lg-5">
+        <div class="col-xs-12">
+            <h3>Créer un nouvel article</h3>
+            <%= form_for @articles do |form| %>
+
+              <% if @articles.errors.any? %>
+                  <div class="alert alert-danger">
+                      <ul>
+                      <% @articles.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                      <% end %>
+                      </ul>
+                  </div>
+              <% end %>
+
+              <div class="input-group mb-2">
+                  <%= form.file_field :image, placeholder: "Image" , :class => "form-control"%> 
+              </div>
+              <div class="input-group mb-2">
+                  <%= form.text_field :name, placeholder: "Nom de l'article" , :class => "form-control"%> 
+              </div>
+              <div class="input-group mb-2">
+                  <%= form.text_field :bio, placeholder: "Bio" , :class => "form-control"%> 
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Modifier l'article</button>
+              </div>
+          <% end %>
+        </div>       
+    </section>
+  </div>
+</div>

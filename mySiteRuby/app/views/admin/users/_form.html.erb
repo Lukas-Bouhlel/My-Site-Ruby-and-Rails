@@ -1,0 +1,46 @@
+<%= form_for @users, url: [:admin, @users], html: {class: 'form-horizontal'} do |form| %>
+
+    <% if @users.errors.any? %>
+        <div class="alert alert-danger">
+            <ul>
+            <% @users.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <% if @users.avatar %>
+        <%= image_tag @users.avatar_url %>
+    <%end%>
+
+    <div class="input-group mb-2">
+        <%= form.file_field :avatar_file, placeholder: "Avatar" , :class => "form-control"%> 
+    </div>
+    <div class="input-group mb-2">
+        <%= form.text_field :name, placeholder: "Nom d'utilisateur" , :class => "form-control"%> 
+    </div>
+    <div class="input-group mb-2">
+        <%= form.email_field :email, placeholder: "Email" , :class => "form-control"%> 
+    </div>
+    <div class="input-group mb-2">
+        <%= form.text_field :firstname, placeholder: "Prénom" , :class => "form-control"%> 
+    </div>
+    <div class="input-group mb-2">
+        <%= form.text_field :lastname, placeholder: "Nom" , :class => "form-control"%> 
+    </div>
+    <div class="input-group mb-2">
+        <%= form.text_field :motto, placeholder: "Biographie" , :class => "form-control"%> 
+    </div>
+    <div class="input-group mb-2">
+        <%= form.password_field :password, placeholder: "Mot de passe" , :class => "form-control"%> 
+    </div>
+    <div class="input-group mb-2">
+        <%= form.password_field :password_confirmation, placeholder: "Confirmer le mot de passe" , :class => "form-control"%> 
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">
+            <%= @users.new_record? ? 'Créer' : 'Modifier mon compte' %>
+        </button>
+    </div>
+<% end %>
